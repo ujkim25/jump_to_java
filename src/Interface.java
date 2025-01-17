@@ -1,6 +1,6 @@
-interface Predator {
+/*interface Predator {
     String getFood();
-}
+}*/
 
 class Animal1 {
     String name;
@@ -8,23 +8,27 @@ class Animal1 {
     void setName(String name) {
         this.name=name;
     }
+
+    String getFood(){
+        return "";
+    }
 }
 
-class Lion extends Animal1 implements Predator{
-    public String getFood(){
+class Lion extends Animal1 /*implements Predator*/{
+    String getFood(){
       return "apple";
     }
 }
 
-class Tiger extends Animal1 implements Predator{
-    public String getFood(){
+class Tiger extends Animal1 /*implements Predator*/{
+    String getFood(){
         return "banana";
     }
 }
 
 class ZooKeeper {
-    void feed(Predator predator){
-        System.out.println("feed "+predator.getFood());
+    void feed(Animal1 animal1){
+        System.out.println("feed "+animal1.getFood());
     }
 }
 
