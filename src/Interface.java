@@ -1,5 +1,5 @@
 interface Predator {
-
+    String getFood();
 }
 
 class Animal1 {
@@ -11,19 +11,20 @@ class Animal1 {
 }
 
 class Lion extends Animal1 implements Predator{
-
+    public String getFood(){
+      return "apple";
+    }
 }
 
 class Tiger extends Animal1 implements Predator{
-
+    public String getFood(){
+        return "banana";
+    }
 }
 
 class ZooKeeper {
-    void feed(Tiger tiger){
-        System.out.println("feed apple");
-    }
-    void feed(Lion lion){
-        System.out.println("feed banana");
+    void feed(Predator predator){
+        System.out.println("feed "+predator.getFood());
     }
 }
 
