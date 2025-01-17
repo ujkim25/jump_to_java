@@ -1,7 +1,7 @@
-interface Predator {
-    String getFood();
+abstract class Predator extends Animal1 {
+    abstract String getFood();
 
-    default void printFood(){
+    void printFood(){
         System.out.println("my food is "+getFood());
     }
 }
@@ -10,9 +10,9 @@ interface Barkable {
     void bark();
 }
 
-interface BarkablePredator extends Predator, Barkable {
+/*interface BarkablePredator extends Predator, Barkable {
 
-}
+}*/
 
 class Animal1 {
     String name;
@@ -22,7 +22,7 @@ class Animal1 {
     }
 }
 
-class Lion extends Animal1 implements BarkablePredator{
+class Lion extends Predator implements Barkable{
     public String getFood(){
       return "apple";
     }
@@ -32,7 +32,7 @@ class Lion extends Animal1 implements BarkablePredator{
     }
 }
 
-class Tiger extends Animal1 implements Predator, Barkable{
+class Tiger extends Predator implements Barkable{
     public String getFood(){
         return "banana";
     }
